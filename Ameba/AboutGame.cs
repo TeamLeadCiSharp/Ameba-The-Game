@@ -20,7 +20,10 @@ namespace Ameba
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             HomeScreen homeScreen = new HomeScreen();
-            SettingsClass.PlayButtonMusic();
+            if (SettingsClass.IsMusicOn == true)
+            {
+                SettingsClass.PlayButtonMusic();
+            }
             this.Hide();
             homeScreen.Show();
         }

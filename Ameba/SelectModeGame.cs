@@ -22,7 +22,10 @@ namespace Ameba
         private void EasyLabel_Click(object sender, EventArgs e)
         {
             Hide();
-            SettingsClass.PlayButtonMusic();
+            if (SettingsClass.IsMusicOn == true)
+            {
+                SettingsClass.PlayButtonMusic();
+            }
             GameForm gameForm = new GameForm();
             ScoreClass.ResetScore();
             GameState.IsLevelEasy = true;
@@ -39,7 +42,10 @@ namespace Ameba
         private void MediumLabel_Click(object sender, EventArgs e)
         {
             Hide();
-            SettingsClass.PlayButtonMusic();
+            if (SettingsClass.IsMusicOn == true)
+            {
+                SettingsClass.PlayButtonMusic();
+            }
             GameForm gameForm = new GameForm();
             ScoreClass.ResetScore();
             GameState.IsLevelEasy = false;
@@ -56,7 +62,10 @@ namespace Ameba
         private void HardLabel_Click(object sender, EventArgs e)
         {
             Hide();
-            SettingsClass.PlayButtonMusic();
+            if (SettingsClass.IsMusicOn == true)
+            {
+                SettingsClass.PlayButtonMusic();
+            }
             GameForm gameForm = new GameForm();
             ScoreClass.ResetScore();
             GameState.IsLevelEasy = false;
@@ -130,7 +139,10 @@ namespace Ameba
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             HomeScreen homeScreen = new HomeScreen();
-            SettingsClass.PlayButtonMusic();
+            if (SettingsClass.IsMusicOn == true)
+            {
+                SettingsClass.PlayButtonMusic();
+            }
             homeScreen.Show();
             Close();
         }

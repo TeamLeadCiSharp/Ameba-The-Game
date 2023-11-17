@@ -193,6 +193,16 @@ namespace Ameba.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap fit {
+            get {
+                object obj = ResourceManager.GetObject("fit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap gohome {
             get {
                 object obj = ResourceManager.GetObject("gohome", resourceCulture);
@@ -276,6 +286,16 @@ namespace Ameba.Properties {
         internal static System.Drawing.Bitmap virus {
             get {
                 object obj = ResourceManager.GetObject("virus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap volume_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("volume-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

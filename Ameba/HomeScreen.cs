@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Media;
 using System.Windows.Forms;
+using System.Reflection.Emit;
 
 namespace Ameba
 {
@@ -21,7 +22,10 @@ namespace Ameba
 
         private void ExitPictureBox_Click(object sender, EventArgs e)
         {
-            SettingsClass.PlayButtonMusic();
+            if (SettingsClass.IsMusicOn == true)
+            {
+                SettingsClass.PlayButtonMusic();
+            }
             Close();
         }
 
@@ -29,7 +33,10 @@ namespace Ameba
         {
             this.Hide();
             SelectModeGame selectModeGame = new SelectModeGame();
-            SettingsClass.PlayButtonMusic();
+            if (SettingsClass.IsMusicOn == true)
+            {
+                SettingsClass.PlayButtonMusic();
+            }
             selectModeGame.Show();
         }
 
@@ -54,7 +61,10 @@ namespace Ameba
         {
             AboutGame aboutGame = new AboutGame();
             this.Hide();
-            SettingsClass.PlayButtonMusic();
+            if (SettingsClass.IsMusicOn == true)
+            {
+                SettingsClass.PlayButtonMusic();
+            }
             aboutGame.Show();
         }
 
@@ -106,7 +116,10 @@ namespace Ameba
         private void SettingsBox_Click(object sender, EventArgs e)
         {
             SettingsForm settingsForm = new SettingsForm();
-            SettingsClass.PlayButtonMusic();
+            if (SettingsClass.IsMusicOn == true)
+            {
+                SettingsClass.PlayButtonMusic();
+            }
             this.Hide();
             settingsForm.Show();
         }

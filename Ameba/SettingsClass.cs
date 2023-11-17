@@ -23,5 +23,6 @@ namespace Ameba
             player.SoundLocation = "C:\\Users\\bazar\\OneDrive\\Desktop\\Ameba — копия — копия — копия\\Music\\level-failed.wav";
             player.Play();
         }
+        
     }
 }

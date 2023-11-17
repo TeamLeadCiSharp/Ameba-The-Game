@@ -58,7 +58,10 @@ namespace Ameba
         private void GoHome_Click_1(object sender, EventArgs e)
         {
             HomeScreen homeScreen = new HomeScreen();
-            SettingsClass.PlayButtonMusic(); ;
+            if (SettingsClass.IsMusicOn == true)
+            {
+                SettingsClass.PlayButtonMusic();
+            }
             GameState.IsGameOver = false;
             GameState.SetPositionForVirus = false;
             Hide();
@@ -67,7 +70,10 @@ namespace Ameba
 
         private void FinalForm_Load(object sender, EventArgs e)
         {
-            SettingsClass.PlayLoseMusic();
+            if (SettingsClass.IsMusicOn == true)
+            {
+                SettingsClass.PlayLoseMusic();
+            }
         }
     }
 }
