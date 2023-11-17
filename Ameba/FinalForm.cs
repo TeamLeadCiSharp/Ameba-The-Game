@@ -19,8 +19,8 @@ namespace Ameba
 
         private void ResultTimer_Tick(object sender, EventArgs e)
         {
-            FinalFormLabel.Text = "Your score: " + ScoreClass.score + "!";
-            SettingsClass.PlayLoseMusic();
+            
+            FinalFormLabel.Text = "Your score: " + ScoreClass.score + "!"; 
         }
 
         private void GoHome_MouseEnter(object sender, EventArgs e)
@@ -63,6 +63,11 @@ namespace Ameba
             GameState.SetPositionForVirus = false;
             Hide();
             homeScreen.Show();
+        }
+
+        private void FinalForm_Load(object sender, EventArgs e)
+        {
+            SettingsClass.PlayLoseMusic();
         }
     }
 }

@@ -32,6 +32,7 @@
             this.FinalFormLabel = new System.Windows.Forms.Label();
             this.GoHome = new System.Windows.Forms.PictureBox();
             this.ResultTimer = new System.Windows.Forms.Timer(this.components);
+            this.TimerForLooser = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.GoHome)).BeginInit();
             this.SuspendLayout();
             // 
@@ -78,6 +79,7 @@
             this.Name = "FinalForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ameba: The Game";
+            this.Load += new System.EventHandler(this.FinalForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.GoHome)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -89,5 +91,6 @@
         private System.Windows.Forms.Label FinalFormLabel;
         private System.Windows.Forms.PictureBox GoHome;
         private System.Windows.Forms.Timer ResultTimer;
+        private System.Windows.Forms.Timer TimerForLooser;
     }
 }
