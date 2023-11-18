@@ -13,9 +13,6 @@ namespace Ameba
 {
     public partial class GameForm : Form
     {
-
-        Random random = new Random((int)DateTime.Now.Millisecond);
-
         public GameForm()
         {
             InitializeComponent();
@@ -60,6 +57,9 @@ namespace Ameba
             {
                 using VirusClass virus = new VirusClass();
                 virus.FindAmebaAlgoritm(ref Ameba, ref Virus1, ref Virus2, ref Virus3);
+                Console.WriteLine($"Ameba: Left={Ameba.Left}, Top={Ameba.Top}, Right={Ameba.Right}, Bottom={Ameba.Bottom}");
+                Console.WriteLine($"Virus1: Left={Virus1.Left}, Top={Virus1.Top}, Right={Virus1.Right}, Bottom={Virus1.Bottom}");
+                Console.WriteLine($"\n\n");
                 using AmebaClass ameba = new AmebaClass(Ameba);
                 ameba.CheckTouchWithVirus(ref Ameba, ref Virus1, this);
             }
@@ -109,8 +109,14 @@ namespace Ameba
             if (GameState.SetPositionForVirus == false)
             {
                 GameState.SetPositionForVirus = true;
-                VirusClass virus = new VirusClass();
+                using VirusClass virus = new VirusClass();
                 virus.StartPositionForViruses(ref Virus1, ref Virus2, ref Virus3);
+            }
+            if (GameState.SetPositionForAmeba == false)
+            {
+                GameState.SetPositionForAmeba = true;
+                using AmebaClass ameba = new AmebaClass(Ameba);
+                ameba.StartPositionForAmeba(ref Ameba);
             }
         }
     }

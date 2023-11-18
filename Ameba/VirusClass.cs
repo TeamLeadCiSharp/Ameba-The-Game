@@ -11,7 +11,7 @@ namespace Ameba
     internal class VirusClass: GameForm
     {
         private int speed = 50;
-        private (int, int) GetPositionOfViruses(ref PictureBox obj)
+        public static (int, int) GetPositionOfViruses(ref PictureBox obj)
         {
             return (obj.Left, obj.Top);
         }
@@ -47,86 +47,98 @@ namespace Ameba
             {
                 if (diifVNX > 0 && diffVNY > 0)
                 {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
                     for (int i = 0; i < diifVNX; i++)
                     {
-                        MoveRight(Virus);
-                        Timer.Interval = 2000;
+                        MoveRight(ref Virus);
+                        break;
                     }
+                    Timer.Interval = Math.Abs(diffVNY);
                     for (int i = 0; i < diffVNY; i++)
                     {
-                        MoveDown(Virus);
-                        Timer.Interval = 2000;
+                        MoveDown(ref Virus);
+                        break;
                     }
                 }
                 else if (diifVNX == 0 && diffVNY > 0)
                 {
+                    Timer.Interval = Math.Abs(diffVNY);
                     for (int i = 0; i < diffVNY; i++)
                     {
-                        MoveDown(Virus);
-                        Timer.Interval = 2000;
+                        MoveDown(ref Virus);
+                        break;
                     }
                 }
                 else if (diifVNX < 0 && diffVNY > 0)
                 {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
                     for (int i = 0; i < Math.Abs(diifVNX); i++)
                     {
-                        MoveLeft(Virus);
-                        Timer.Interval = 2000;
+                        MoveLeft(ref Virus);
+                        break;
                     }
+                    Timer.Interval = Math.Abs(diffVNY);
                     for (int i = 0; i < diffVNY; i++)
                     {
-                        MoveDown(Virus);
-                        Timer.Interval = 2000;
+                        MoveDown(ref Virus);
+                        break;
                     }
                 }
                 else if (diifVNX > 0 && diffVNY == 0)
                 {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
                     for (int i = 0; i < diifVNX; i++)
                     {
-                        MoveRight(Virus);
-                        Timer.Interval = 2000;
+                        MoveRight(ref Virus);
+                        break;
                     }
                 }
                 else if (diifVNX < 0 && diffVNY == 0)
                 {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
                     for (int i = 0; i < Math.Abs(diifVNX); i++)
                     {
-                        MoveLeft(Virus);
-                        Timer.Interval = 2000;
+                        MoveLeft(ref Virus);
+                        break;
                     }
                 }
                 else if (diifVNX < 0 && diffVNY < 0)
                 {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
                     for (int i = 0; i < Math.Abs(diifVNX); i++)
                     {
-                        MoveLeft(Virus);
-                        Timer.Interval = 2000;
+                        MoveLeft(ref Virus);
+                        break;
                     }
+                    Timer.Interval = Math.Abs(diffVNY);
                     for (int i = 0; i < Math.Abs(diffVNY); i++)
                     {
-                        MoveUp(Virus);
-                        Timer.Interval = 2000;
+                        MoveUp(ref Virus);
+                        break;
                     }
                 }
                 else if (diifVNX == 0 && diffVNY < 0)
                 {
+                    Timer.Interval = Math.Abs(diffVNY);
                     for (int i = 0; i < Math.Abs(diffVNY); i++)
                     {
-                        MoveUp(Virus);
-                        Timer.Interval = 2000;
+                        MoveUp(ref Virus);
+                        break;
                     }
                 }
                 else if (diifVNX > 0 && diffVNY < 0)
                 {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
                     for (int i = 0; i < diifVNX; i++)
                     {
-                        MoveRight(Virus);
-                        Timer.Interval = 2000;
+                        MoveRight(ref Virus);
+                        break;
                     }
+                    Timer.Interval = Math.Abs(diffVNY);
                     for (int i = 0; i < Math.Abs(diffVNY); i++)
                     {
-                        MoveUp(Virus);
-                        Timer.Interval = 2000;
+                        MoveUp(ref Virus);
+                        break;
                     }
                 }
             }
@@ -160,7 +172,7 @@ namespace Ameba
 
                 Virus3.Hide();
                 Virus3.Left = 550;
-                Virus3.Top = 50;
+                Virus3.Top = 100;
             }
             else if (GameState.IsLevelEasy == false && GameState.IsLevelMedium == true && GameState.IsLevelHard == false)
             {
@@ -172,7 +184,7 @@ namespace Ameba
 
                 Virus3.Hide();
                 Virus3.Left = 550;
-                Virus3.Top = 50;
+                Virus3.Top = 100;
             }
             else if (GameState.IsLevelEasy == false && GameState.IsLevelMedium == false && GameState.IsLevelHard == true)
             {
@@ -186,7 +198,7 @@ namespace Ameba
                 Virus3.Top = 50;
             }
         }
-        public void MoveLeft(PictureBox virus)
+        public void MoveLeft(ref PictureBox virus)
         {
             if (GameState.IsGameOver == false)
             {
@@ -198,7 +210,7 @@ namespace Ameba
 
         }
 
-        public void MoveRight(PictureBox virus)
+        public void MoveRight(ref PictureBox virus)
         {
 
             if (GameState.IsGameOver == false)
@@ -211,7 +223,7 @@ namespace Ameba
 
         }
 
-        public void MoveUp(PictureBox virus)
+        public void MoveUp(ref PictureBox virus)
         {
             if (GameState.IsGameOver == false)
             {
@@ -223,7 +235,7 @@ namespace Ameba
 
         }
 
-        public void MoveDown(PictureBox virus)
+        public void MoveDown(ref PictureBox virus)
         {
             if (GameState.IsGameOver == false)
             {

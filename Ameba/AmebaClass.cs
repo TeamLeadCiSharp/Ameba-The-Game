@@ -14,9 +14,23 @@ namespace Ameba
         private bool finalFormShown = false;
         private int speed = 50;
         FinalForm finalForm = new FinalForm();
+
+        public static (int, int) GetPositionOfAmeba(ref PictureBox obj)
+        {
+            return (obj.Left, obj.Top);
+        }
         public AmebaClass(PictureBox ameba)
         {
             Ameba = ameba;
+        }
+
+        public void StartPositionForAmeba(ref PictureBox Ameba)
+        {
+            if (GameState.IsLevelEasy == true || GameState.IsLevelMedium == true  || GameState.IsLevelHard == true)
+            {
+                Ameba.Left = 250;
+                Ameba.Top = 400;
+            }
         }
         public void MoveLeft()
         {
@@ -96,7 +110,7 @@ namespace Ameba
         }
         public void CheckTouchWithVirus(ref PictureBox Ameba, ref PictureBox Virus1, Form gameForm)
         {
-            if (Ameba.Bounds.IntersectsWith(Virus1.Bounds))
+            if (GetPositionOfAmeba(ref Ameba) == VirusClass.GetPositionOfViruses(ref Virus1) && Ameba.Bounds.IntersectsWith(Virus1.Bounds))
             {
                 Health -= 50;
                 if (Health == 0 || Health < 0)
@@ -121,7 +135,7 @@ namespace Ameba
         }
         public void CheckTouchWithVirus(ref PictureBox Ameba, ref PictureBox Virus1, ref PictureBox Virus2, Form gameForm)
         {
-            if (Ameba.Bounds.IntersectsWith(Virus1.Bounds))
+            if (GetPositionOfAmeba(ref Ameba) == VirusClass.GetPositionOfViruses(ref Virus1) && Ameba.Bounds.IntersectsWith(Virus1.Bounds))
             {
                 Health -= 50;
                 if (Health == 0 || Health < 0)
@@ -143,7 +157,7 @@ namespace Ameba
                 }
 
             }
-            else if (Ameba.Bounds.IntersectsWith(Virus2.Bounds))
+            else if (GetPositionOfAmeba(ref Ameba) == VirusClass.GetPositionOfViruses(ref Virus2) && Ameba.Bounds.IntersectsWith(Virus2.Bounds))
             {
                 Health -= 50;
                 if (Health == 0 || Health < 0)
@@ -167,7 +181,7 @@ namespace Ameba
         }
         public void CheckTouchWithVirus(ref PictureBox Ameba, ref PictureBox Virus1, ref PictureBox Virus2, ref PictureBox Virus3, Form gameForm)
         {
-            if (Ameba.Bounds.IntersectsWith(Virus1.Bounds))
+            if (GetPositionOfAmeba(ref Ameba) == VirusClass.GetPositionOfViruses(ref Virus1) && Ameba.Bounds.IntersectsWith(Virus1.Bounds))
             {
                 Health -= 50;
                 if (Health == 0 || Health < 0)
@@ -189,7 +203,7 @@ namespace Ameba
                 }
 
             }
-            else if (Ameba.Bounds.IntersectsWith(Virus2.Bounds))
+            else if (GetPositionOfAmeba(ref Ameba) == VirusClass.GetPositionOfViruses(ref Virus2) && Ameba.Bounds.IntersectsWith(Virus2.Bounds))
             {
                 Health -= 50;
                 if (Health == 0 || Health < 0)
@@ -210,7 +224,7 @@ namespace Ameba
                     }
                 };
             }
-            else if (Ameba.Bounds.IntersectsWith(Virus3.Bounds))
+            else if (GetPositionOfAmeba(ref Ameba) == VirusClass.GetPositionOfViruses(ref Virus3) && Ameba.Bounds.IntersectsWith(Virus3.Bounds))
             {
                 Health -= 50;
                 if (Health == 0 || Health < 0)

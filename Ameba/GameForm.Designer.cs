@@ -80,7 +80,7 @@
             this.Virus1.Image = global::Ameba.Properties.Resources.virus;
             this.Virus1.Location = new System.Drawing.Point(50, 50);
             this.Virus1.Name = "Virus1";
-            this.Virus1.Size = new System.Drawing.Size(48, 48);
+            this.Virus1.Size = new System.Drawing.Size(50, 50);
             this.Virus1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Virus1.TabIndex = 3;
             this.Virus1.TabStop = false;
@@ -91,7 +91,7 @@
             this.Virus2.Image = global::Ameba.Properties.Resources.virus;
             this.Virus2.Location = new System.Drawing.Point(250, 50);
             this.Virus2.Name = "Virus2";
-            this.Virus2.Size = new System.Drawing.Size(48, 48);
+            this.Virus2.Size = new System.Drawing.Size(50, 50);
             this.Virus2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Virus2.TabIndex = 4;
             this.Virus2.TabStop = false;
@@ -99,7 +99,7 @@
             // Timer
             // 
             this.Timer.Enabled = true;
-            this.Timer.Interval = 2000;
+            this.Timer.Interval = 500;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // HelpPictureBox
@@ -176,7 +176,7 @@
             this.Virus3.Image = global::Ameba.Properties.Resources.virus;
             this.Virus3.Location = new System.Drawing.Point(400, 50);
             this.Virus3.Name = "Virus3";
-            this.Virus3.Size = new System.Drawing.Size(48, 48);
+            this.Virus3.Size = new System.Drawing.Size(50, 50);
             this.Virus3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.Virus3.TabIndex = 10;
             this.Virus3.TabStop = false;

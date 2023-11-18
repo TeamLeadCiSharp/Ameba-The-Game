@@ -13,5 +13,6 @@ namespace Ameba
         public static bool IsLevelMedium = false;
         public static bool IsLevelHard = false;
         public static bool SetPositionForVirus = false;
+        public static bool SetPositionForAmeba = false;
     }
 }
