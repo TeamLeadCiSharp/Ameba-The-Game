@@ -4,7 +4,7 @@
     <Position X="0.75" Y="7.25" Width="1.5" />
     <InheritanceLine Type="Ameba.GameForm" ManuallyRouted="true">
       <Path>
-        <Point X="5.25" Y="6.414" />
+        <Point X="5.25" Y="6.222" />
         <Point X="5.25" Y="6.889" />
         <Point X="1.5" Y="6.889" />
         <Point X="1.5" Y="7.25" />
@@ -19,14 +19,14 @@
   <Class Name="Ameba.FinalForm" Collapsed="true">
     <Position X="12" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAACAAQAAEQACAAAACAAAAgIBAAgAAAAEAAQA=</HashCode>
+      <HashCode>AAAAAAAAACBAQAAEQACAAAACAAAAgIBAAgAAAAEAIQA=</HashCode>
       <FileName>FinalForm.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Ameba.GameForm">
     <Position X="4.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQACAQBCCABAABAAADAAAACACAAQAgABAQAAAAGkIA=</HashCode>
+      <HashCode>AAQACAQBCCABAABAAADAAAACACAAQAgABAQAAAAGgIA=</HashCode>
       <FileName>GameForm.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -76,21 +76,21 @@
     <Position X="2.5" Y="7.25" Width="1.5" />
     <InheritanceLine Type="Ameba.GameForm" ManuallyRouted="true">
       <Path>
-        <Point X="5.25" Y="6.414" />
+        <Point X="5.25" Y="6.222" />
         <Point X="5.25" Y="6.854" />
         <Point X="3.25" Y="6.854" />
         <Point X="3.25" Y="7.25" />
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAEAAAAAAAAAAAAAAAAAAAIAAAAAAQAIQAAAAAAAAAA=</HashCode>
+      <HashCode>AAEAAAAAAAAAAAAAAAAAQAIAAAAAAQAIQAAAABAAAAA=</HashCode>
       <FileName>VirusClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="Ameba.Properties.Resources" Collapsed="true">
     <Position X="13.75" Y="1.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AKUBAAAAAAAAEAAAAAARFAAAgQKAAAAAQACIgKAAAIE=</HashCode>
+      <HashCode>AKUBACAAAIAAEAAAAAARFAAAgQKAAAAAQACIgKAAAIE=</HashCode>
     </TypeIdentifier>
   </Class>
   <Class Name="Ameba.Properties.Settings" Collapsed="true">

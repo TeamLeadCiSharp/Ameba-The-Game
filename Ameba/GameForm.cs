@@ -53,53 +53,31 @@ namespace Ameba
             }
         }
 
-        private void MoveVirus(ref PictureBox Virus)
-        {
-            using VirusClass virus = new VirusClass();
-            int direction = random.Next(1, 5); 
-
-            if (direction == 1 && Virus.Left > 0) 
-            {
-                virus.MoveLeft(Virus);
-            }
-            else if (direction == 2 && Virus.Right < 450)
-            {
-                virus.MoveRight(Virus);
-            }
-            else if (direction == 3 && Virus.Top != 0) 
-            {
-                virus.MoveUp(Virus);
-            }
-            else if (direction == 4 && Virus.Bottom < 450)
-            {
-                virus.MoveDown(Virus);
-            }
-        }
 
         private void Timer_Tick(object sender, EventArgs e)
         {
             if (GameState.IsLevelEasy == true && GameState.IsLevelMedium == false && GameState.IsLevelHard == false)
             {
-                MoveVirus(ref Virus1);
+                using VirusClass virus = new VirusClass();
+                virus.FindAmebaAlgoritm(ref Ameba, ref Virus1, ref Virus2, ref Virus3);
                 using AmebaClass ameba = new AmebaClass(Ameba);
                 ameba.CheckTouchWithVirus(ref Ameba, ref Virus1, this);
             }
             else if (GameState.IsLevelEasy == false && GameState.IsLevelMedium == true && GameState.IsLevelHard == false)
             {
-                MoveVirus(ref Virus1);
+                using VirusClass virus = new VirusClass();
+                virus.FindAmebaAlgoritm(ref Ameba, ref Virus1, ref Virus2, ref Virus3);
                 using AmebaClass ameba = new AmebaClass(Ameba);
                 ameba.CheckTouchWithVirus(ref Ameba, ref Virus1, ref Virus2, this);
-                MoveVirus(ref Virus2);
                 ameba.CheckTouchWithVirus(ref Ameba, ref Virus1, ref Virus2, this);
             }
             else if (GameState.IsLevelEasy == false && GameState.IsLevelMedium == false && GameState.IsLevelHard == true)
             {
-                MoveVirus(ref Virus1);
+                using VirusClass virus = new VirusClass();
+                virus.FindAmebaAlgoritm(ref Ameba, ref Virus1, ref Virus2, ref Virus3);
                 using AmebaClass ameba = new AmebaClass(Ameba);
                 ameba.CheckTouchWithVirus(ref Ameba, ref Virus1, ref Virus2, ref Virus3, this);
-                MoveVirus(ref Virus2);
                 ameba.CheckTouchWithVirus(ref Ameba, ref Virus1, ref Virus2, ref Virus3, this);
-                MoveVirus(ref Virus3);
             }
 
         }

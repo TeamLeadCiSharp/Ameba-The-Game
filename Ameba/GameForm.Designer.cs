@@ -99,7 +99,7 @@
             // Timer
             // 
             this.Timer.Enabled = true;
-            this.Timer.Interval = 25;
+            this.Timer.Interval = 2000;
             this.Timer.Tick += new System.EventHandler(this.Timer_Tick);
             // 
             // HelpPictureBox
