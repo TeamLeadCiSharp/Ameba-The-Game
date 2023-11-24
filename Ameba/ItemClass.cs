@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Ameba
 {
-    internal class ItemClass: GameForm
+    public class ItemClass: GameForm
     {
         public static bool BurgerWasEaten = false;
         public static bool AspirineWasEaten = false;

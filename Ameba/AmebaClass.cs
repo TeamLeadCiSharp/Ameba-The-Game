@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace Ameba
 {
-    internal class AmebaClass: GameForm, IMovable, IEater
+    public class AmebaClass: GameForm, IMovable, IEater
     {
         public PictureBox Ameba { get; }
         public static int Health = 100;

@@ -8,7 +8,7 @@ using System.Windows.Forms;
 
 namespace Ameba
 {
-    internal class VirusClass: GameForm
+    public class VirusClass: GameForm
     {
         private int speed = 50;
         public static (int, int) GetPositionOfViruses(ref PictureBox obj)
@@ -198,50 +198,50 @@ namespace Ameba
                 Virus3.Top = 50;
             }
         }
-        public void MoveLeft(ref PictureBox virus)
+        public void MoveLeft(ref PictureBox virus1)
         {
             if (GameState.IsGameOver == false)
             {
-                if (virus.Left > 0)
+                if (virus1.Left > 0)
                 {
-                    virus.Left -= speed;
+                    virus1.Left -= speed;
                 }
             }
 
         }
 
-        public void MoveRight(ref PictureBox virus)
+        public void MoveRight(ref PictureBox virus1)
         {
 
             if (GameState.IsGameOver == false)
             {
-                if (virus.Right < 450)
+                if (virus1.Right < 450)
                 {
-                    virus.Left += speed;
+                    virus1.Left += speed;
                 }
             }
 
         }
 
-        public void MoveUp(ref PictureBox virus)
+        public void MoveUp(ref PictureBox virus1)
         {
             if (GameState.IsGameOver == false)
             {
-                if (virus.Top != 0)
+                if (virus1.Top != 0)
                 {
-                    virus.Top -= speed;
+                    virus1.Top -= speed;
                 }
             }
 
         }
 
-        public void MoveDown(ref PictureBox virus)
+        public void MoveDown(ref PictureBox virus1)
         {
             if (GameState.IsGameOver == false)
             {
-                if (virus.Bottom < 450)
+                if (virus1.Bottom < 450)
                 {
-                    virus.Top += speed;
+                    virus1.Top += speed;
                 }
             }
 

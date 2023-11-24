@@ -11,7 +11,7 @@
       </Path>
     </InheritanceLine>
     <TypeIdentifier>
-      <HashCode>AAEACAAAAAAAAAAEAAAAAAAAAAAAAQgKQAAAAAAAiEA=</HashCode>
+      <HashCode>AAEACCAAAAAAAAAFAAAAAAAAAAAAAQgKQAAAAAAAiEA=</HashCode>
       <FileName>AmebaClass.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.1" />
@@ -33,7 +33,7 @@
   <Class Name="Ameba.GameState" Collapsed="true">
     <Position X="13.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AQAIAAAAAAAAAAAAAAAAQAAAAAAAAABAAAAAAACAAAA=</HashCode>
+      <HashCode>AQAIAAAAAAAAAAAAACAAQAAAAAAAAABAAAAAAACAAAA=</HashCode>
       <FileName>GameState.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -97,6 +97,13 @@
     <Position X="12" Y="2.5" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Ameba.SettingsClass">
+    <Position X="8.5" Y="7.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ABAAAAAAAAAAAAAAAAEQAAAAAAAAAAAAAAAAIAAAAAA=</HashCode>
+      <FileName>SettingsClass.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="Ameba.IEater">
