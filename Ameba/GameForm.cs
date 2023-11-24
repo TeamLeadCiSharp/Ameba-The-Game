@@ -55,13 +55,10 @@ namespace Ameba
         {
             if (GameState.IsLevelEasy == true && GameState.IsLevelMedium == false && GameState.IsLevelHard == false)
             {
-                using VirusClass virus = new VirusClass();
-                virus.FindAmebaAlgoritm(ref Ameba, ref Virus1, ref Virus2, ref Virus3);
-                Console.WriteLine($"Ameba: Left={Ameba.Left}, Top={Ameba.Top}, Right={Ameba.Right}, Bottom={Ameba.Bottom}");
-                Console.WriteLine($"Virus1: Left={Virus1.Left}, Top={Virus1.Top}, Right={Virus1.Right}, Bottom={Virus1.Bottom}");
-                Console.WriteLine($"\n\n");
                 using AmebaClass ameba = new AmebaClass(Ameba);
                 ameba.CheckTouchWithVirus(ref Ameba, ref Virus1, this);
+                using VirusClass virus = new VirusClass();
+                virus.FindAmebaAlgoritm(ref Ameba, ref Virus1, ref Virus2, ref Virus3);
             }
             else if (GameState.IsLevelEasy == false && GameState.IsLevelMedium == true && GameState.IsLevelHard == false)
             {

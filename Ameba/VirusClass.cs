@@ -43,20 +43,20 @@ namespace Ameba
             int diff3X = (amebaX - virus3X) / 50;
             int diff3Y = (amebaY - virus3Y) / 50;
             
-            void BehaviourOfVirus(ref PictureBox Virus, int diifVNX, int diffVNY)
+            void BehaviourOfVirus1(ref PictureBox Virus1, ref PictureBox Virus2, ref PictureBox Virus3, int diifVNX, int diffVNY)
             {
                 if (diifVNX > 0 && diffVNY > 0)
                 {
                     Timer.Interval = Math.Abs(diifVNX) * 2000;
                     for (int i = 0; i < diifVNX; i++)
                     {
-                        MoveRight(ref Virus);
+                        MoveRight(virus1: ref Virus1, virus2: ref Virus2, virus3: ref Virus3);
                         break;
                     }
                     Timer.Interval = Math.Abs(diffVNY);
                     for (int i = 0; i < diffVNY; i++)
                     {
-                        MoveDown(ref Virus);
+                        MoveDown(virus1: ref Virus1, virus2: ref Virus2, virus3: ref Virus3);
                         break;
                     }
                 }
@@ -65,7 +65,7 @@ namespace Ameba
                     Timer.Interval = Math.Abs(diffVNY);
                     for (int i = 0; i < diffVNY; i++)
                     {
-                        MoveDown(ref Virus);
+                        MoveDown(virus1: ref Virus1, virus2: ref Virus2, virus3: ref Virus3);
                         break;
                     }
                 }
@@ -74,13 +74,13 @@ namespace Ameba
                     Timer.Interval = Math.Abs(diifVNX) * 2000;
                     for (int i = 0; i < Math.Abs(diifVNX); i++)
                     {
-                        MoveLeft(ref Virus);
+                        MoveLeft(virus1: ref Virus1, virus2: ref Virus2, virus3: ref Virus3);
                         break;
                     }
                     Timer.Interval = Math.Abs(diffVNY);
                     for (int i = 0; i < diffVNY; i++)
                     {
-                        MoveDown(ref Virus);
+                        MoveDown(virus1: ref Virus1, virus2: ref Virus2, virus3: ref Virus3);
                         break;
                     }
                 }
@@ -89,7 +89,7 @@ namespace Ameba
                     Timer.Interval = Math.Abs(diifVNX) * 2000;
                     for (int i = 0; i < diifVNX; i++)
                     {
-                        MoveRight(ref Virus);
+                        MoveRight(virus1: ref Virus1, virus2: ref Virus2, virus3: ref Virus3);
                         break;
                     }
                 }
@@ -98,7 +98,7 @@ namespace Ameba
                     Timer.Interval = Math.Abs(diifVNX) * 2000;
                     for (int i = 0; i < Math.Abs(diifVNX); i++)
                     {
-                        MoveLeft(ref Virus);
+                        MoveLeft(virus1: ref Virus1, virus2: ref Virus2, virus3: ref Virus3);
                         break;
                     }
                 }
@@ -107,13 +107,13 @@ namespace Ameba
                     Timer.Interval = Math.Abs(diifVNX) * 2000;
                     for (int i = 0; i < Math.Abs(diifVNX); i++)
                     {
-                        MoveLeft(ref Virus);
+                        MoveLeft(virus1: ref Virus1, virus2: ref Virus2, virus3: ref Virus3);
                         break;
                     }
                     Timer.Interval = Math.Abs(diffVNY);
                     for (int i = 0; i < Math.Abs(diffVNY); i++)
                     {
-                        MoveUp(ref Virus);
+                        MoveUp(virus1: ref Virus1, virus2: ref Virus2, virus3: ref Virus3);
                         break;
                     }
                 }
@@ -122,7 +122,7 @@ namespace Ameba
                     Timer.Interval = Math.Abs(diffVNY);
                     for (int i = 0; i < Math.Abs(diffVNY); i++)
                     {
-                        MoveUp(ref Virus);
+                        MoveUp(virus1: ref Virus1, virus2: ref Virus2, virus3: ref Virus3);
                         break;
                     }
                 }
@@ -131,13 +131,212 @@ namespace Ameba
                     Timer.Interval = Math.Abs(diifVNX) * 2000;
                     for (int i = 0; i < diifVNX; i++)
                     {
-                        MoveRight(ref Virus);
+                        MoveRight(virus1: ref Virus1, ref Virus2, ref Virus3);
                         break;
                     }
                     Timer.Interval = Math.Abs(diffVNY);
                     for (int i = 0; i < Math.Abs(diffVNY); i++)
                     {
-                        MoveUp(ref Virus);
+                        MoveUp(virus1: ref Virus1, virus2: ref Virus2, virus3: ref Virus3);
+                        break;
+                    }
+                }
+            }
+            void BehaviourOfVirus2(ref PictureBox Virus2, ref PictureBox Virus1, ref PictureBox Virus3, int diifVNX, int diffVNY)
+            {
+                if (diifVNX > 0 && diffVNY > 0)
+                {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
+                    for (int i = 0; i < diifVNX; i++)
+                    {
+                        MoveRight(virus1: ref Virus2, virus2: ref Virus1, virus3: ref Virus3);
+                        break;
+                    }
+                    Timer.Interval = Math.Abs(diffVNY);
+                    for (int i = 0; i < diffVNY; i++)
+                    {
+                        MoveDown(virus1: ref Virus2, virus2: ref Virus1, virus3: ref Virus3);
+                        break;
+                    }
+                }
+                else if (diifVNX == 0 && diffVNY > 0)
+                {
+                    Timer.Interval = Math.Abs(diffVNY);
+                    for (int i = 0; i < diffVNY; i++)
+                    {
+                        MoveDown(virus1: ref Virus2, virus2: ref Virus1, virus3: ref Virus3);
+                        break;
+                    }
+                }
+                else if (diifVNX < 0 && diffVNY > 0)
+                {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
+                    for (int i = 0; i < Math.Abs(diifVNX); i++)
+                    {
+                        MoveLeft(virus1: ref Virus2, virus2: ref Virus1, virus3: ref Virus3);
+                        break;
+                    }
+                    Timer.Interval = Math.Abs(diffVNY);
+                    for (int i = 0; i < diffVNY; i++)
+                    {
+                        MoveDown(virus1: ref Virus2, virus2: ref Virus1, virus3: ref Virus3);
+                        break;
+                    }
+                }
+                else if (diifVNX > 0 && diffVNY == 0)
+                {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
+                    for (int i = 0; i < diifVNX; i++)
+                    {
+                        MoveRight(virus1: ref Virus2, virus2: ref Virus1, virus3: ref Virus3);
+                        break;
+                    }
+                }
+                else if (diifVNX < 0 && diffVNY == 0)
+                {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
+                    for (int i = 0; i < Math.Abs(diifVNX); i++)
+                    {
+                        MoveLeft(virus1: ref Virus2, virus2: ref Virus1, virus3: ref Virus3);
+                        break;
+                    }
+                }
+                else if (diifVNX < 0 && diffVNY < 0)
+                {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
+                    for (int i = 0; i < Math.Abs(diifVNX); i++)
+                    {
+                        MoveLeft(virus1: ref Virus2, virus2: ref Virus1, virus3: ref Virus3);
+                        break;
+                    }
+                    Timer.Interval = Math.Abs(diffVNY);
+                    for (int i = 0; i < Math.Abs(diffVNY); i++)
+                    {
+                        MoveUp(virus1: ref Virus2, virus2: ref Virus1, virus3: ref Virus3);
+                        break;
+                    }
+                }
+                else if (diifVNX == 0 && diffVNY < 0)
+                {
+                    Timer.Interval = Math.Abs(diffVNY);
+                    for (int i = 0; i < Math.Abs(diffVNY); i++)
+                    {
+                        MoveUp(virus1: ref Virus2, virus2: ref Virus1, virus3: ref Virus3);
+                        break;
+                    }
+                }
+                else if (diifVNX > 0 && diffVNY < 0)
+                {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
+                    for (int i = 0; i < diifVNX; i++)
+                    {
+                        MoveRight(virus1: ref Virus2, virus2: ref Virus1, virus3: ref Virus3);
+                        break;
+                    }
+                    Timer.Interval = Math.Abs(diffVNY);
+                    for (int i = 0; i < Math.Abs(diffVNY); i++)
+                    {
+                        MoveUp(virus1: ref Virus2, virus2: ref Virus1, virus3: ref Virus3);
+                        break;
+                    }
+                }
+            }
+
+            void BehaviourOfVirus3(ref PictureBox Virus3, ref PictureBox Virus2, ref PictureBox Virus1, int diifVNX, int diffVNY)
+            {
+                if (diifVNX > 0 && diffVNY > 0)
+                {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
+                    for (int i = 0; i < diifVNX; i++)
+                    {
+                        MoveRight(virus1: ref Virus3, virus2: ref Virus1, virus3: ref Virus2);
+                        break;
+                    }
+                    Timer.Interval = Math.Abs(diffVNY);
+                    for (int i = 0; i < diffVNY; i++)
+                    {
+                        MoveDown(virus1: ref Virus3, virus2: ref Virus1, virus3: ref Virus2);
+                        break;
+                    }
+                }
+                else if (diifVNX == 0 && diffVNY > 0)
+                {
+                    Timer.Interval = Math.Abs(diffVNY);
+                    for (int i = 0; i < diffVNY; i++)
+                    {
+                        MoveDown(virus1: ref Virus3, virus2: ref Virus1, virus3: ref Virus2);
+                        break;
+                    }
+                }
+                else if (diifVNX < 0 && diffVNY > 0)
+                {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
+                    for (int i = 0; i < Math.Abs(diifVNX); i++)
+                    {
+                        MoveLeft(virus1: ref Virus3, virus2: ref Virus1, virus3: ref Virus2);
+                        break;
+                    }
+                    Timer.Interval = Math.Abs(diffVNY);
+                    for (int i = 0; i < diffVNY; i++)
+                    {
+                        MoveDown(virus1: ref Virus3, virus2: ref Virus1, virus3: ref Virus2);
+                        break;
+                    }
+                }
+                else if (diifVNX > 0 && diffVNY == 0)
+                {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
+                    for (int i = 0; i < diifVNX; i++)
+                    {
+                        MoveRight(virus1: ref Virus3, virus2: ref Virus1, virus3: ref Virus2);
+                        break;
+                    }
+                }
+                else if (diifVNX < 0 && diffVNY == 0)
+                {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
+                    for (int i = 0; i < Math.Abs(diifVNX); i++)
+                    {
+                        MoveLeft(virus1: ref Virus3, virus2: ref Virus1, virus3: ref Virus2);
+                        break;
+                    }
+                }
+                else if (diifVNX < 0 && diffVNY < 0)
+                {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
+                    for (int i = 0; i < Math.Abs(diifVNX); i++)
+                    {
+                        MoveLeft(virus1: ref Virus3, virus2: ref Virus1, virus3: ref Virus2);
+                        break;
+                    }
+                    Timer.Interval = Math.Abs(diffVNY);
+                    for (int i = 0; i < Math.Abs(diffVNY); i++)
+                    {
+                        MoveUp(virus1: ref Virus3, virus2: ref Virus1, virus3: ref Virus2);
+                        break;
+                    }
+                }
+                else if (diifVNX == 0 && diffVNY < 0)
+                {
+                    Timer.Interval = Math.Abs(diffVNY);
+                    for (int i = 0; i < Math.Abs(diffVNY); i++)
+                    {
+                        MoveUp(virus1: ref Virus3, virus2: ref Virus1, virus3: ref Virus2);
+                        break;
+                    }
+                }
+                else if (diifVNX > 0 && diffVNY < 0)
+                {
+                    Timer.Interval = Math.Abs(diifVNX) * 2000;
+                    for (int i = 0; i < diifVNX; i++)
+                    {
+                        MoveRight(virus1: ref Virus3, virus2: ref Virus1, virus3: ref Virus2);
+                        break;
+                    }
+                    Timer.Interval = Math.Abs(diffVNY);
+                    for (int i = 0; i < Math.Abs(diffVNY); i++)
+                    {
+                        MoveUp(virus1: ref Virus3, virus2: ref Virus1, virus3: ref Virus2);
                         break;
                     }
                 }
@@ -145,18 +344,18 @@ namespace Ameba
 
             if (GameState.IsLevelEasy == true && GameState.IsLevelMedium == false && GameState.IsLevelHard == false)
             {
-                BehaviourOfVirus(ref Virus1, diff1X, diff1Y);
+                BehaviourOfVirus1(Virus1: ref Virus1, ref Virus2, ref Virus3, diff1X, diff1Y);
             }
             else if (GameState.IsLevelEasy == false && GameState.IsLevelMedium == true && GameState.IsLevelHard == false)
             {
-                BehaviourOfVirus(ref Virus1, diff1X, diff1Y);
-                BehaviourOfVirus(ref Virus2, diff2X, diff2Y);
+                BehaviourOfVirus1(Virus1: ref Virus1, ref Virus2, ref Virus3, diff1X, diff1Y);
+                BehaviourOfVirus2(Virus2: ref Virus2, ref Virus1, ref Virus3, diff2X, diff2Y);
             }
             else if (GameState.IsLevelEasy == false && GameState.IsLevelMedium == false && GameState.IsLevelHard == true)
             {
-                BehaviourOfVirus(ref Virus1, diff1X, diff1Y);
-                BehaviourOfVirus(ref Virus2, diff2X, diff2Y);
-                BehaviourOfVirus(ref Virus3, diff3X, diff3Y);
+                BehaviourOfVirus1(Virus1: ref Virus1, ref Virus2, ref Virus3, diff1X, diff1Y);
+                BehaviourOfVirus2(Virus2: ref Virus2, ref Virus1, ref Virus3, diff2X, diff2Y);
+                BehaviourOfVirus3(Virus3: ref Virus3, ref Virus2, ref Virus1, diff3X, diff3Y);
             }
         }
         public void StartPositionForViruses(ref PictureBox Virus1, ref PictureBox Virus2, ref PictureBox Virus3)
@@ -198,50 +397,80 @@ namespace Ameba
                 Virus3.Top = 50;
             }
         }
-        public void MoveLeft(ref PictureBox virus1)
+        public void MoveLeft(ref PictureBox virus1, ref PictureBox virus2, ref PictureBox virus3)
         {
             if (GameState.IsGameOver == false)
             {
                 if (virus1.Left > 0)
                 {
-                    virus1.Left -= speed;
+                    if (!virus1.Bounds.IntersectsWith(virus2.Bounds) || !virus1.Bounds.IntersectsWith(virus3.Bounds))
+                    {
+                        if (virus1.Left + 50 != virus2.Left || virus1.Left + 50 != virus3.Left)
+                        {
+                            virus1.Left -= speed;
+                        }
+                        
+                    }
+
                 }
             }
 
         }
 
-        public void MoveRight(ref PictureBox virus1)
+        public void MoveRight(ref PictureBox virus1, ref PictureBox virus2, ref PictureBox virus3)
         {
 
             if (GameState.IsGameOver == false)
             {
                 if (virus1.Right < 450)
                 {
-                    virus1.Left += speed;
+                    if (!virus1.Bounds.IntersectsWith(virus2.Bounds) || !virus1.Bounds.IntersectsWith(virus3.Bounds))
+                    {
+                        if (virus1.Left + 50 != virus2.Left || virus1.Left + 50 != virus3.Left)
+                        {
+                            virus1.Left += speed;
+                        }
+
+                    }
                 }
             }
 
         }
 
-        public void MoveUp(ref PictureBox virus1)
+        public void MoveUp(ref PictureBox virus1, ref PictureBox virus2, ref PictureBox virus3)
         {
             if (GameState.IsGameOver == false)
             {
                 if (virus1.Top != 0)
                 {
-                    virus1.Top -= speed;
+                    if (!virus1.Bounds.IntersectsWith(virus2.Bounds) || !virus1.Bounds.IntersectsWith(virus3.Bounds))
+                    {
+                        if (virus1.Left + 50 != virus2.Left || virus1.Left + 50 != virus3.Left)
+                        {
+                            virus1.Top -= speed;
+                        }
+
+                    }
                 }
             }
 
         }
 
-        public void MoveDown(ref PictureBox virus1)
+        public void MoveDown(ref PictureBox virus1, ref PictureBox virus2, ref PictureBox virus3)
         {
             if (GameState.IsGameOver == false)
             {
                 if (virus1.Bottom < 450)
                 {
-                    virus1.Top += speed;
+                    if (!virus1.Bounds.IntersectsWith(virus2.Bounds) || !virus1.Bounds.IntersectsWith(virus3.Bounds))
+                    {
+                        if (virus1.Left + 50 != virus2.Left || virus1.Left + 50 != virus3.Left)
+                        {
+                            virus1.Top += speed;
+                        }
+
+                    }
+
                 }
             }
 
