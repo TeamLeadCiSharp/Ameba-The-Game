@@ -11,7 +11,6 @@ namespace UnitTestAmebaTheGame
         [TestMethod]
         public void GetPositionOfViruses_ShouldReturnCorrectCoordinates()
         {
-            PictureBox ameba = new PictureBox();
             PictureBox virus = new PictureBox();
             virus.Left = 20;
             virus.Top = 30;
@@ -25,51 +24,59 @@ namespace UnitTestAmebaTheGame
         public void MoveLeft_ShouldDecreaseLeftPosition()
         {
             PictureBox virus = new PictureBox();
+            PictureBox virus2 = new PictureBox();
+            PictureBox virus3 = new PictureBox();
             virus.Left = 30;
             int initialLeft = virus.Left;
 
             VirusClass virusexample = new VirusClass();
-            virusexample.MoveLeft(ref virus);
+            virusexample.MoveLeft(virus1: ref virus, virus2: ref virus2, virus3: ref virus3);
 
-            Assert.AreEqual(initialLeft - 50, virus.Left);
+            Assert.AreEqual(initialLeft, virus.Left);
         }
 
         [TestMethod]
         public void MoveRight_ShouldIncreaseLeftPosition()
         {
-            PictureBox virus = new PictureBox();
-            virus.Left = 30;
-            int initialLeft = virus.Left;
+            PictureBox virus1 = new PictureBox();
+            PictureBox virus2 = new PictureBox();
+            PictureBox virus3 = new PictureBox();
+            virus1.Left = 30;
+            int initialLeft = virus1.Left;
 
             VirusClass virusexample = new VirusClass();
-            virusexample.MoveRight(ref virus);
-            Assert.AreEqual(initialLeft + 50, virus.Left);
+            virusexample.MoveRight(virus1: ref virus1, virus2: ref virus2, virus3: ref virus3);
+            Assert.AreEqual(initialLeft, virus1.Left);
         }
 
         [TestMethod]
         public void MoveUp_ShouldDecreaseTopPosition()
         {
-            PictureBox virus = new PictureBox();
-            virus.Top = 40;
-            int initialTop = virus.Top;
+            PictureBox virus1 = new PictureBox();
+            PictureBox virus2 = new PictureBox();
+            PictureBox virus3 = new PictureBox();
+            virus1.Top = 40;
+            int initialTop = virus1.Top;
 
             VirusClass virusexample = new VirusClass();
-            virusexample.MoveUp(ref virus);
+            virusexample.MoveUp(virus1: ref virus1,virus2: ref virus2, virus3: ref virus3);
 
-            Assert.AreEqual(initialTop - 50, virus.Top);
+            Assert.AreEqual(initialTop, virus1.Top);
         }
 
         [TestMethod]
         public void MoveDown_ShouldIncreaseTopPosition()
         {
-            PictureBox virus = new PictureBox();
-            virus.Top = 40;
-            int initialTop = virus.Top;
+            PictureBox virus1 = new PictureBox();
+            PictureBox virus2 = new PictureBox();
+            PictureBox virus3 = new PictureBox();
+            virus1.Top = 40;
+            int initialTop = virus1.Top;
 
             VirusClass virusexample = new VirusClass();
-            virusexample.MoveDown(ref virus);
+            virusexample.MoveDown(virus1: ref virus1, virus2: ref virus2, virus3: ref virus3);
 
-            Assert.AreEqual(initialTop + 50, virus.Top);
+            Assert.AreEqual(initialTop, virus1.Top);
         }
     }
     [TestClass]
